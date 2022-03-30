@@ -1,0 +1,96 @@
+<resources>
+    <string name="app_name">SmartMobileFactory_App_JC</string>
+
+    <string name="page_title_series">Series</string>
+    <string name="page_title_series_enumerated">Series (%d)</string>
+    <string name="page_title_search">Search</string>
+    <string name="page_title_favorite">Favorites</string>
+
+    <!-- Favorite page -->
+    <string name="favorite_action_favorite">Favorite</string>
+    <string name="favorite_action_unfavorite">Unfavorite</string>
+    <string name="favorite_empty">You do not have favorites yet, when you favorite a series it will appear here.</string>
+
+    <!-- Search page -->
+    <string name="series_menu_go_to_end">Go to end</string>
+    <string name="series_menu_sort">Change sort rule</string>
+    <string name="search_menu_clear">Clear</string>
+    <string name="search_menu_voice">Voice search</string>
+    <string name="search_empty">Write the name of the series on the field above.</string>
+    <string name="search_not_found">No series found.</string>
+
+    <!-- Detail page -->
+    <string name="detail_no_show">Failed to find the show, please try again later.</string>
+    <string name="detail_genres">Genres:</string>
+    <string name="detail_days">Days:</string>
+    <string name="detail_time">Time:</string>
+    <string name="detail_episodes">Episodes:</string>
+    <string name="detail_day_acronym_monday">M</string>
+    <string name="detail_day_acronym_tuesday">T</string>
+    <string name="detail_day_acronym_wednesday">W</string>
+    <string name="detail_day_acronym_thursday">T</string>
+    <string name="detail_day_acronym_friday">F</string>
+    <string name="detail_day_acronym_saturday">S</string>
+    <string name="detail_day_acronym_sunday">S</string>
+    <string name="detail_episodes_button">See episodes</string>
+    <string name="detail_episodes_button_retry">Failed to load episodes, try again</string>
+
+    <!-- Seasons page -->
+    <string name="seasons_page_title">Episodes of %s</string>
+    <string name="seasons_page_fail_to_load">Failed to load episodes, please try again later.</string>
+    <string name="seasons_page_header">Season %d %s</string>
+    <string name="seasons_page_episode">Episode %d %s</string>
+
+    <!-- Episode page -->
+    <string name="episode_no_data">Failed to find the episode, please try again later.</string>
+    <string name="episode_season_title">Season:</string>
+    <string name="episode_number_title">Number:</string>
+
+    <!-- Genre titles -->
+    <string name="genre_title_action">action</string>
+    <string name="genre_title_adventure">adventure</string>
+    <string name="genre_title_anime">anime</string>
+    <string name="genre_title_comedy">comedy</string>
+    <string name="genre_title_crime">crime</string>
+    <string name="genre_title_drama">drama</string>
+    <string name="genre_title_espionage">espionage</string>
+    <string name="genre_title_family">family</string>
+    <string name="genre_title_fantasy">fantasy</string>
+    <string name="genre_title_history">history</string>
+    <string name="genre_title_horror">horror</string>
+    <string name="genre_title_legal">legal</string>
+    <string name="genre_title_medical">medical</string>
+    <string name="genre_title_music">music</string>
+    <string name="genre_title_mystery">mystery</string>
+    <string name="genre_title_romance">romance</string>
+    <string name="genre_title_science_fiction">science fiction</string>
+    <string name="genre_title_sports">sports</string>
+    <string name="genre_title_supernatural">supernatural</string>
+    <string name="genre_title_thriller">thriller</string>
+    <string name="genre_title_war">war</string>
+    <string name="genre_title_western">western</string>
+
+    <!-- Languages name (as in the the target language) -->
+    <string name="language_chinese">chinese</string>
+    <string name="language_dutch">dutch</string>
+    <string name="language_english">english</string>
+    <string name="language_french">french</string>
+    <string name="language_german">german</string>
+    <string name="language_japanese">japanese</string>
+    <string name="language_korean">korean</string>
+    <string name="language_polish">polish</string>
+    <string name="language_portuguese">portuguese</string>
+    <string name="language_russian">russian</string>
+    <string name="language_spanish">spanish</string>
+    <string name="language_swedish">swedish</string>
+    <string name="language_turkish">turkish</string>
+    <string name="language_ukrainian">ukrainian</string>
+    <string name="language_other">other</string>
+
+    <!-- Contend description -->
+    <string name="cd_rating">Rating</string>
+    <string name="cd_series_banner">Series banner</string>
+    <string name="cd_series_genre">Series genre</string>
+    <string name="cd_series_language">Series language</string>
+    <string name="cd_series_rating">Series rating</string>
+</resources>

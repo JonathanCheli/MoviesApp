@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="gray_slot1">#33000000</color>
+    <color name="slot1">#FF000000</color>
+    <color name="slot2">#33000000</color>
+    <color name="slot3">#070707</color>
+    <color name="slot4">#373838</color>
+    <color name="slot5">#C5E1A5</color>
+    <color name="slot6">#F60101</color>
+</resources>
+
+

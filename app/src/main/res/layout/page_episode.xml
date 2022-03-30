@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:fitsSystemWindows="true">
+
+    <include layout="@layout/include_edge_case_content" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:fitsSystemWindows="true"
+        android:visibility="gone"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:listitem="@layout/item_series"
+        tools:visibility="visible">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/banner"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/bg_name_contrast"
+                android:contentDescription="@string/cd_series_banner"
+                android:scaleType="centerCrop"
+                app:layout_constraintDimensionRatio="3:4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/bg_name_contrast"
+                app:layout_constraintBottom_toBottomOf="@+id/banner"
+                app:layout_constraintEnd_toEndOf="@+id/banner"
+                app:layout_constraintStart_toStartOf="@+id/banner"
+                app:layout_constraintTop_toTopOf="@+id/banner" />
+
+            <TextView
+                android:id="@+id/name"
+                style="@style/TextAppearance.MaterialComponents.Headline3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:gravity="center"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@+id/banner"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="@tools:sample/full_names" />
+
+            <TextView
+                android:id="@+id/summary"
+                style="@style/TextAppearance.MaterialComponents.Headline5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:gravity="center"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/banner"
+                tools:text="@tools:sample/full_names" />
+
+            <TextView
+                android:id="@+id/season_header"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:gravity="start"
+                android:text="@string/episode_season_title"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toStartOf="@+id/season_value"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/summary" />
+
+            <TextView
+                android:id="@+id/season_value"
+                style="@style/TextAppearance.MaterialComponents.Headline5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:gravity="start"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@+id/season_header"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/season_header"
+                app:layout_constraintTop_toTopOf="@+id/season_header"
+                tools:text="1" />
+
+            <TextView
+                android:id="@+id/number_header"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:gravity="start"
+                android:text="@string/episode_number_title"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toStartOf="@+id/number_value"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/season_header" />
+
+            <TextView
+                android:id="@+id/number_value"
+                style="@style/TextAppearance.MaterialComponents.Headline5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:gravity="start"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@+id/number_header"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/number_header"
+                app:layout_constraintTop_toTopOf="@+id/number_header"
+                tools:text="12" />
+
+            <View
+                android:id="@+id/nav_bar_protection"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="80dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/number_header"
+                app:layout_constraintVertical_bias="0.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:theme="@style/ToolBarStyle"
+        app:navigationIcon="@drawable/ic_back_contrast" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

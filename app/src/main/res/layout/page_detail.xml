@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:background="@color/black"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <include layout="@layout/include_edge_case_content" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:fitsSystemWindows="true"
+        android:visibility="gone"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:listitem="@layout/item_series"
+        tools:visibility="visible">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/banner"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/bg_name_contrast"
+                android:contentDescription="@string/cd_series_banner"
+                android:scaleType="centerCrop"
+                android:backgroundTint="@color/gray_slot1"
+                app:layout_constraintDimensionRatio="3:4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/bg_name_contrast"
+                app:layout_constraintBottom_toBottomOf="@+id/banner"
+                app:layout_constraintEnd_toEndOf="@+id/banner"
+                app:layout_constraintStart_toStartOf="@+id/banner"
+                app:layout_constraintTop_toTopOf="@+id/banner" />
+
+            <TextView
+                android:id="@+id/name"
+                style="@style/TextAppearance.MaterialComponents.Headline3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:gravity="center"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@+id/banner"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="@tools:sample/full_names" />
+
+            <TextView
+                android:id="@+id/summary"
+                style="@style/TextAppearance.MaterialComponents.Headline5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:gravity="center"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/banner"
+                tools:text="@tools:sample/full_names" />
+
+            <TextView
+                android:id="@+id/genres_header"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:gravity="start"
+                android:text="@string/detail_genres"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/summary" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/genres_list"
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/genres_header"
+                tools:listitem="@layout/item_detail_genre" />
+
+            <ImageView
+                android:id="@+id/rating"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:contentDescription="@string/cd_rating"
+                android:src="@drawable/ic_rating"
+                app:layout_constraintBottom_toTopOf="@+id/time_header"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/genres_list" />
+
+            <TextView
+                android:id="@+id/rating_value"
+                style="@style/TextAppearance.MaterialComponents.Headline4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="16dp"
+                android:gravity="end"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/rating"
+                app:layout_constraintStart_toEndOf="@+id/rating"
+                app:layout_constraintTop_toTopOf="@+id/rating"
+                tools:text="8.5" />
+
+            <ImageView
+                android:id="@+id/language"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:importantForAccessibility="no"
+                app:layout_constraintBottom_toBottomOf="@+id/rating"
+                app:layout_constraintStart_toEndOf="@+id/rating_value"
+                app:layout_constraintTop_toTopOf="@+id/rating"
+                tools:src="@drawable/lang_other" />
+
+            <TextView
+                android:id="@+id/language_title"
+                style="@style/TextAppearance.MaterialComponents.Headline4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="16dp"
+                android:gravity="start"
+                android:lines="1"
+                app:autoSizeTextType="uniform"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@+id/rating"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/language"
+                app:layout_constraintTop_toTopOf="@+id/rating"
+                tools:text="@string/language_other" />
+
+            <TextView
+                android:id="@+id/time_header"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:gravity="start"
+                android:text="@string/detail_time"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toStartOf="@+id/time_value"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rating" />
+
+            <TextView
+                android:id="@+id/time_value"
+                style="@style/TextAppearance.MaterialComponents.Headline5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:gravity="start"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@+id/time_header"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/time_header"
+                app:layout_constraintTop_toTopOf="@+id/time_header"
+                tools:text="12:34" />
+
+            <TextView
+                android:id="@+id/day_header"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:gravity="start"
+                android:text="@string/detail_days"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/time_header" />
+
+            <FrameLayout
+                android:id="@+id/day_value_monday_bg"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@+id/day_value_tuesday_bg"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/day_header"
+                tools:background="@drawable/bg_tile_schedule_day_on">
+
+                <TextView
+                    android:id="@+id/day_value_monday_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="@string/detail_day_acronym_monday"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:autoSizeTextType="uniform" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/day_value_tuesday_bg"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintBottom_toBottomOf="@+id/day_value_monday_bg"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="@+id/day_value_wednesday_bg"
+                app:layout_constraintStart_toEndOf="@+id/day_value_monday_bg"
+                app:layout_constraintTop_toTopOf="@+id/day_value_monday_bg"
+                tools:background="@drawable/bg_tile_schedule_day_on">
+
+                <TextView
+                    android:id="@+id/day_value_tuesday_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="@string/detail_day_acronym_tuesday"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:autoSizeTextType="uniform" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/day_value_wednesday_bg"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintBottom_toBottomOf="@+id/day_value_monday_bg"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@+id/day_value_thursday_bg"
+                app:layout_constraintStart_toEndOf="@+id/day_value_tuesday_bg"
+                app:layout_constraintTop_toTopOf="@+id/day_value_monday_bg"
+                tools:background="@drawable/bg_tile_schedule_day_off">
+
+                <TextView
+                    android:id="@+id/day_value_wednesday_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="@string/detail_day_acronym_wednesday"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:autoSizeTextType="uniform" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/day_value_thursday_bg"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintBottom_toBottomOf="@+id/day_value_monday_bg"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@+id/day_value_friday_bg"
+                app:layout_constraintStart_toEndOf="@+id/day_value_wednesday_bg"
+                app:layout_constraintTop_toTopOf="@+id/day_value_monday_bg"
+                tools:background="@drawable/bg_tile_schedule_day_off">
+
+                <TextView
+                    android:id="@+id/day_value_thursday_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="@string/detail_day_acronym_thursday"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:autoSizeTextType="uniform" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/day_value_friday_bg"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintBottom_toBottomOf="@+id/day_value_monday_bg"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@+id/day_value_saturday_bg"
+                app:layout_constraintStart_toEndOf="@+id/day_value_thursday_bg"
+                app:layout_constraintTop_toTopOf="@+id/day_value_monday_bg"
+                tools:background="@drawable/bg_tile_schedule_day_on">
+
+                <TextView
+                    android:id="@+id/day_value_friday_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="@string/detail_day_acronym_friday"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:autoSizeTextType="uniform" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/day_value_saturday_bg"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintBottom_toBottomOf="@+id/day_value_monday_bg"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@+id/day_value_sunday_bg"
+                app:layout_constraintStart_toEndOf="@+id/day_value_friday_bg"
+                app:layout_constraintTop_toTopOf="@+id/day_value_monday_bg"
+                tools:background="@drawable/bg_tile_schedule_day_on">
+
+                <TextView
+                    android:id="@+id/day_value_saturday_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="@string/detail_day_acronym_saturday"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:autoSizeTextType="uniform" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/day_value_sunday_bg"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintBottom_toBottomOf="@+id/day_value_monday_bg"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/day_value_saturday_bg"
+                app:layout_constraintTop_toTopOf="@+id/day_value_monday_bg"
+                tools:background="@drawable/bg_tile_schedule_day_off">
+
+                <TextView
+                    android:id="@+id/day_value_sunday_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="@string/detail_day_acronym_sunday"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:autoSizeTextType="uniform" />
+
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/episodes_header"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:gravity="start"
+                android:text="@string/detail_episodes"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/day_value_monday_bg" />
+
+            <ProgressBar
+                android:id="@+id/episodes_load"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintBottom_toTopOf="@+id/nav_bar_protection"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/episodes_header"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <Button
+                android:id="@+id/episodes_button"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:drawableEnd="@drawable/ic_chevron_page_details_see_episodes"
+                android:gravity="start|center"
+                android:minHeight="64dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:text="@string/detail_episodes_button"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toTopOf="@+id/nav_bar_protection"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/episodes_header"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <View
+                android:id="@+id/nav_bar_protection"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="80dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/episodes_header"
+                app:layout_constraintVertical_bias="0.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:theme="@style/ToolBarStyle"
+        app:menu="@menu/detail_menu_toolbar"
+        app:navigationIcon="@drawable/ic_back_contrast" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

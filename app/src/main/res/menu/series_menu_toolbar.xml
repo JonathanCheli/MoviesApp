@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_series_go_to_end"
+        android:icon="@drawable/ic_series_go_to_end"
+        android:title="@string/series_menu_go_to_end"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_series_sort"
+        android:icon="@drawable/ic_series_sort"
+        android:title="@string/series_menu_sort"
+        app:showAsAction="ifRoom" />
+
+</menu>

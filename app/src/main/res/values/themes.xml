@@ -1,0 +1,50 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.SmartMobileFactory_App_JC"
+        parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/slot1</item>
+        <item name="colorPrimaryVariant">@color/gray_slot1</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/black</item>
+        <item name="colorSecondaryVariant">@color/slot4</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:navigationBarColor">@color/black</item>
+        <!-- Status bar color. -->
+        <!-- Customize your theme here. -->
+    </style>
+
+
+
+    <style name="Theme.SmartMobileFactory_App_JC.Detail">
+        <item name="android:fitsSystemWindows">true</item>
+        <item name="android:statusBarColor">@color/gray_slot1</item>
+        <item name="android:navigationBarColor">@color/gray_slot1</item>
+    </style>
+
+    <style name="BottomNavigationStyle"
+        parent="ThemeOverlay.MaterialComponents">
+        <item name="android:background">@color/slot2</item>
+        <item name="itemIconTint">@color/gray_slot1</item>
+        <item name="itemTextColor">@color/gray_slot1</item>
+    </style>
+
+    <style name="ToolBarStyle"
+        parent="ThemeOverlay.MaterialComponents.ActionBar">
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="android:textColorSecondary">@android:color/white</item>
+        <item name="actionMenuTextColor">@android:color/white</item>
+    </style>
+
+    <style name="ToolbarEditTextStyle"
+        parent="Widget.AppCompat.EditText">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textColorHint">@android:color/white</item>
+    </style>
+
+
+    <style name="BottomNavigationTheme" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/black</item>
+        <item name="android:textColorSecondary">@color/gray_slot1</item>
+    </style>
+</resources>

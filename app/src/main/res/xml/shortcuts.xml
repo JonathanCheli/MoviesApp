@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="UnusedAttribute">
+
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_series_shortcut"
+        android:shortcutDisabledMessage="@string/page_title_series"
+        android:shortcutId="series"
+        android:shortcutLongLabel="@string/page_title_series"
+        android:shortcutShortLabel="@string/page_title_series">
+        <intent
+            android:action="com.example.smartmobilefactory_app_jc.action.series"
+            android:targetClass=" com.example.smartmobilefactory_app_jc.StartActivity"
+            android:targetPackage="ademar.tvmaze" />
+    </shortcut>
+
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_search_shortcut"
+        android:shortcutDisabledMessage="@string/page_title_search"
+        android:shortcutId="search"
+        android:shortcutLongLabel="@string/page_title_search"
+        android:shortcutShortLabel="@string/page_title_search">
+        <intent
+            android:action="com.example.smartmobilefactory_app_jc.action.search"
+            android:targetClass="com.example.smartmobilefactory_app_jc.StartActivity"
+            android:targetPackage="ademar.tvmaze" />
+    </shortcut>
+
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_favorite_shortcut"
+        android:shortcutDisabledMessage="@string/page_title_favorite"
+        android:shortcutId="favorite"
+        android:shortcutLongLabel="@string/page_title_favorite"
+        android:shortcutShortLabel="@string/page_title_favorite">
+        <intent
+            android:action="com.example.smartmobilefactory_app_jc.favorite"
+            android:targetClass="com.example.smartmobilefactory_app_jc.StartActivity"
+            android:targetPackage="ademar.tvmaze" />
+    </shortcut>
+
+</shortcuts>
