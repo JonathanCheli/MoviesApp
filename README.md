@@ -33,10 +33,6 @@ Material Components.
 
 Leakcanary.
 
-Jetpack:
-
-Lifecycle. 
-
 Navigation Components.
 
 Patter Design MVP.
