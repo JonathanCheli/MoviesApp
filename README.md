@@ -19,13 +19,19 @@ OkHttp3.
 
 Paging.
 
-Coroutines.
+Moshi.
+
+Room.
+
+RXJava.
 
 Reactive programming.
 
 clean code.
 
 Material Components.
+
+Leakcanary.
 
 Jetpack:
 
@@ -36,3 +42,5 @@ ViewModel.
 Navigation Components.
 
 Data Binding.
+
+Patter Design MVP.
