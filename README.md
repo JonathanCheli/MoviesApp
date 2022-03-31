@@ -11,7 +11,7 @@ Retrofit.
 
 Dagger-Hilt.
 
-Minimum SDK level 21.
+Minimum SDK level 24.
 
 Glide.
 
