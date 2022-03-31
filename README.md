@@ -37,10 +37,6 @@ Jetpack:
 
 Lifecycle. 
 
-ViewModel.
-
 Navigation Components.
-
-Data Binding.
 
 Patter Design MVP.
